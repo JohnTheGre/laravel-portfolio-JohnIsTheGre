@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-{{--    <link href="styles.css" rel="stylesheet">--}}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{{--    <script src="https://kit.fontawesome.com/074263b914.js" crossorigin="anonymous"></script>--}}
-    <title>SWOT-analysis</title>
-    @include('navbar')
-</head>
+@extends('layout.layout')
+
+@section('content')
 <body>
 <h2>Strengths</h2>
 <p class="strength-paragraph">In relation to my strengths (not trying to sound arrogant in anyway whatsoever) I feel that I have good Communication skills.<br>
@@ -18,21 +11,4 @@
     That being said I feel my weaknesses aren't exactly that much but the one's I can highlight are: difficulty in asking for help and inability to relate to difficult personalities.<br>
     I see those two as my most daunting weekeness due to my field of study as I know I would have to meet different types of people easpecilly during project and group works and not wanting to ask for help and or relating to difficult people  will be a great adversary to my achievements.<br>Fortunatly recognising my weaknesses at such an early stage affords me the opportunity to work on them.</p>
 </body>
-<footer>
-    <h2>WELCOME TO MY WEBSITE.</h2>
-    <div class="icons">
-        <a href="https://whatsapp.com">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        <a href="https://twitter.com">
-            <i class="fa-brands fa-twitter"></i>
-        </a>
-        <a href="https://instagram.com">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://facebook.com">
-            <i class="fa-brands fa-facebook"></i>
-        </a>
-    </div>
-</footer>
-</html>
+@endsection

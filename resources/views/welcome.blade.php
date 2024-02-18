@@ -10,31 +10,52 @@
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
     <body>
-        {{-- Navigation bar --}}
-        <nav class="navbar is-primary  has-text-white" >
-            <div class="container">
-                <div class="navbar-brand">
-                    <a href="/" class="navbar-item">
-                        <strong><i class="fas fa-graduation-cap"></i> HZ</strong>
+    {{-- Navigation bar --}}
+    <nav class="navbar is-primary has-text-white">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="/" class="navbar-item">
+                    <strong><i class="fas fa-graduation-cap"></i> HZ</strong>
+                </a>
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div class="navbar-menu" id="navMenu">
+                <div class="navbar-start">
+                    <a href="{{ route('home') }}"
+                       class="navbar-item {{ Request::route()->getName() === 'home' ? "is-active" : "" }}">
+                        Home
                     </a>
-                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
+                    <a href="{{ route('index') }}"
+                       class="navbar-item {{ Request::route()->getName() === 'index' ? "is-active" : "" }}">
+                        Index
                     </a>
-                </div>
-                <div class="navbar-menu" id="navMenu">
-                    <div class="navbar-start">
-                        <a href="{{ route('home') }}"
-                           class="navbar-item {{ Request::route()->getName() === 'home' ? "is-active" : "" }}">
-                            Home
-                        </a>
-                    </div>
+                    <a href="{{ route('profile') }}"
+                       class="navbar-item {{ Request::route()->getName() === 'profile' ? "is-active" : "" }}">
+                        Profile
+                    </a>
+                    <a href="{{ route('faq') }}"
+                       class="navbar-item {{ Request::route()->getName() === 'faq' ? "is-active" : "" }}">
+                        FAQ
+                    </a>
+                    <a href="{{ route('blog') }}"
+                       class="navbar-item {{ Request::route()->getName() === 'blog' ? "is-active" : "" }}">
+                        Blog
+                    </a>
+                    <a href="{{ route('dashboard') }}"
+                       class="navbar-item {{ Request::route()->getName() === 'dashboard' ? "is-active" : "" }}">
+                        Dashboard
+                    </a>
                 </div>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        {{-- Content --}}
+
+    {{-- Content --}}
         <section class="hero  is-medium  is-bold is-primary">
             <div class="hero-body" style="
             background: url('https://www.hz.nl/imager/uploads/images/3.-Werk-en-studie/Headers/docent-coacht-studenten-003_c8fa470484be7b69be5daae77a1602c5.jpg') no-repeat center center;

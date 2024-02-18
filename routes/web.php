@@ -36,3 +36,19 @@ Route::get('/dashboard', function () {
 Route::get('/blog', function () {
     return view('blog');
 })->name('blog');
+
+Route::get('/my-study', function () {
+    return view('my-study');
+})->name('my-study');
+
+Route::get('/programming-experience', function () {
+    return view('programming-experience');
+})->name('programming-experience');
+
+Route::get('/SWOT-analysis', function () {
+    return view('SWOT-analysis');
+})->name('SWOT-analysis');
+
+Route::get('/ICT-field-of-work', function () {
+    return view('ICT-field-of-work');
+})->name('ICT-field-of-work');

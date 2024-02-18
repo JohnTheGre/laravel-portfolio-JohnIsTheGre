@@ -1,14 +1,6 @@
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-{{--    <link href="styles.css" rel="stylesheet">--}}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-{{--    <script src="https://kit.fontawesome.com/074263b914.js" crossorigin="anonymous"></script>--}}
-    @include('navbar')
+@extends('layout.layout')
 
-</head>
+@section('content')
 <body>
 <main>
     <h1 id="h-first"><em>WHY THE ICT STUDY FIELD SUITS ME</em></h1>
@@ -42,21 +34,4 @@
 
 </main>
 </body>
-<footer>
-    <h2>WELCOME TO MY WEBSITE.</h2>
-    <div class="icons">
-        <a href="https://whatsapp.com">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        <a href="https://twitter.com">
-            <i class="fa-brands fa-twitter"></i>
-        </a>
-        <a href="https://instagram.com">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://facebook.com">
-            <i class="fa-brands fa-facebook"></i>
-        </a>
-    </div>
-</footer>
-</html>
+@endsection

@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-{{--    <link href= "styles.css" rel="stylesheet">--}}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{{--    <script src="https://kit.fontawesome.com/074263b914.js" crossorigin="anonymous"></script>--}}
-    <title>Frequently asked questions</title>
-    @include('navbar')
-</head>
+@extends('layout.layout')
+
+@section('content')
 <body>
 <main>
     <h1 id="h-frequent">Frequently Asked Questions</h1>
@@ -43,22 +35,4 @@
         </details>
     </section>
 </main>
-<footer>
-    <h2>WELCOME TO MY WEBSITE.</h2>
-    <div class="icons">
-        <a href="https://whatsapp.com">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-        <a href="https://twitter.com">
-            <i class="fa-brands fa-twitter"></i>
-        </a>
-        <a href="https://instagram.com">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://facebook.com">
-            <i class="fa-brands fa-facebook"></i>
-        </a>
-    </div>
-</footer>
-</body>
-</html>
+@endsection

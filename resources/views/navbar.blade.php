@@ -1,16 +1,43 @@
-{{--@include('index');--}}
-{{--@include('profile');--}}
-{{--@include('dashboard');--}}
-{{--@include('faq');--}}
-{{--@include('blog');--}}
-
-{{--<nav class="navbar">--}}
-{{--    <ul class="content">--}}
-{{--        <li><a href="{{ route('/index') }}">Home Page</a></li>--}}
-{{--        <li><a href="{{ route('/profile') }}">Profile</a></li>--}}
-{{--        <li><a href="{{ route('/dashboard') }}">Dashboard</a></li>--}}
-{{--        <li><a href="{{ route('/faq') }}">FAQ</a></li>--}}
-{{--        <li><a href="{{ route('/blog') }}">Blog</a></li>--}}
-{{--        <li><img src="{{ asset('Hz image-new.png') }}" alt="Hz university of applied sciences logo" id="logo"></li>--}}
-{{--    </ul>--}}
+{{-- Navigation bar --}}
+{{--<nav class="navbar is-primary has-text-white">--}}
+{{--    <div class="container">--}}
+{{--        <div class="navbar-brand">--}}
+{{--            <a href="/" class="navbar-item">--}}
+{{--                <strong><i class="fas fa-graduation-cap"></i> HZ</strong>--}}
+{{--            </a>--}}
+{{--            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">--}}
+{{--                <span aria-hidden="true"></span>--}}
+{{--                <span aria-hidden="true"></span>--}}
+{{--                <span aria-hidden="true"></span>--}}
+{{--            </a>--}}
+{{--        </div>--}}
+{{--        <div class="navbar-menu" id="navMenu">--}}
+{{--            <div class="navbar-start">--}}
+{{--                <a href="{{ route('home') }}"--}}
+{{--                   class="navbar-item {{ Request::route()->getName() === 'home' ? "is-active" : "" }}">--}}
+{{--                    Home--}}
+{{--                </a>--}}
+{{--                <a href="{{ route('index') }}"--}}
+{{--                   class="navbar-item {{ Request::route()->getName() === 'index' ? "is-active" : "" }}">--}}
+{{--                    Index--}}
+{{--                </a>--}}
+{{--                <a href="{{ route('profile') }}"--}}
+{{--                   class="navbar-item {{ Request::route()->getName() === 'profile' ? "is-active" : "" }}">--}}
+{{--                    Profile--}}
+{{--                </a>--}}
+{{--                <a href="{{ route('faq') }}"--}}
+{{--                   class="navbar-item {{ Request::route()->getName() === 'faq' ? "is-active" : "" }}">--}}
+{{--                    FAQ--}}
+{{--                </a>--}}
+{{--                <a href="{{ route('blog') }}"--}}
+{{--                   class="navbar-item {{ Request::route()->getName() === 'blog' ? "is-active" : "" }}">--}}
+{{--                    Blog--}}
+{{--                </a>--}}
+{{--                <a href="{{ route('dashboard') }}"--}}
+{{--                   class="navbar-item {{ Request::route()->getName() === 'dashboard' ? "is-active" : "" }}">--}}
+{{--                    Dashboard--}}
+{{--                </a>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
 {{--</nav>--}}
