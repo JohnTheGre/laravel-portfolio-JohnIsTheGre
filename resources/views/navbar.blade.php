@@ -25,8 +25,8 @@
 {{--                   class="navbar-item {{ Request::route()->getName() === 'profile' ? "is-active" : "" }}">--}}
 {{--                    Profile--}}
 {{--                </a>--}}
-{{--                <a href="{{ route('faq') }}"--}}
-{{--                   class="navbar-item {{ Request::route()->getName() === 'faq' ? "is-active" : "" }}">--}}
+{{--                <a href="{{ route('faqs') }}"--}}
+{{--                   class="navbar-item {{ Request::route()->getName() === 'faqs' ? "is-active" : "" }}">--}}
 {{--                    FAQ--}}
 {{--                </a>--}}
 {{--                <a href="{{ route('blog') }}"--}}

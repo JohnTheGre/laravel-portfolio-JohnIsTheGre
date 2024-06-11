@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{asset('style.css')}}">
+    <link rel="stylesheet" href="{{ asset('styles.css') }}">
 
     <title>HZ HBO-ICT</title>
 
@@ -26,28 +26,24 @@
         </div>
         <div class="navbar-menu" id="navMenu">
             <div class="navbar-start">
-                <a href="{{ route('home') }}"
-                   class="navbar-item {{ Request::route()->getName() === 'home' ? "is-active" : "" }}">
-                    Home
-                </a>
                 <a href="{{ route('index') }}"
-                   class="navbar-item {{ Request::route()->getName() === 'index' ? "is-active" : "" }}">
+                   class="navbar-item {{ Request::route()?->getName() === 'index' ? "is-active" : "" }}">
                     Index
                 </a>
                 <a href="{{ route('profile') }}"
-                   class="navbar-item {{ Request::route()->getName() === 'profile' ? "is-active" : "" }}">
+                   class="navbar-item {{ Request::route()?->getName() === 'profile' ? "is-active" : "" }}">
                     Profile
                 </a>
-                <a href="{{ route('faq') }}"
-                   class="navbar-item {{ Request::route()->getName() === 'faq' ? "is-active" : "" }}">
+                <a href="{{ route('faqs.index') }}"
+                   class="navbar-item {{ Request::route()?->getName() === 'faqs.index' ? "is-active" : "" }}">
                     FAQ
                 </a>
-                <a href="{{ route('blog') }}"
-                   class="navbar-item {{ Request::route()->getName() === 'blog' ? "is-active" : "" }}">
+                <a href="{{ route('posts.index') }}"
+                   class="navbar-item {{ Request::route()?->getName() === 'posts.index' ? "is-active" : "" }}">
                     Blog
                 </a>
                 <a href="{{ route('dashboard') }}"
-                   class="navbar-item {{ Request::route()->getName() === 'dashboard' ? "is-active" : "" }}">
+                   class="navbar-item {{ Request::route()?->getName() === 'dashboard' ? "is-active" : "" }}">
                     Dashboard
                 </a>
             </div>
