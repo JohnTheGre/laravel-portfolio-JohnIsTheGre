@@ -13,28 +13,8 @@
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
-                    <a href="{{ route('posts.edit', $post) }}" class="button is-primary">Edit this post</a>
-                    <x-ui.modal name="delete" title="Confirm delete"
-                                type="danger">
-                        <x-slot:trigger class="is-danger">Delete</x-slot:trigger>
-
-                        <form id="delete-post" method="POST" action="{{ route('posts.destroy', $post) }}">
-                            @csrf
-                            @method('DELETE')
-                            Click "Confirm" to delete this Blog Post.
-                            <br>
-                            <strong>CAUTION!</strong> This action cannot be undone.
-                        </form>
-
-                        <x-slot:footer>
-                            <div class="control">
-                                <button type="submit" form="delete-post" class="button is-danger">Confirm</button>
-                            </div>
-                            <div class="control">
-                                <button type="button" class="button is-light cancel">Cancel</button>
-                            </div>
-                        </x-slot:footer>
-                    </x-ui.modal>
+                    <a href="/post/{{ $post->id }}/edit" class="button is-primary">Edit Question</a>
+                    <a href="/post/{{ $post->id }}/delete" class="button is-primary">Delete Question</a>
                 </div>
             </div>
         </div>

@@ -1,7 +1,36 @@
 @extends('components.layout.layout')
 
 @section('content')
+    <style>
+        .error-messages {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .error-messages ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .error-messages li {
+            margin-bottom: 5px;
+        }
+    </style>
     <div class="box">
+        @if ($errors->any())
+            <div class="error-messages ">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form action="{{ route('posts.store') }}" method="POST">
             @csrf
             <h1 class="title is-4">Create a New Blog Post</h1>
@@ -50,7 +79,7 @@
                 <div class="control has-icons-right">
                     <x-ui.wysiwyg name="body" rows="15" class="@error('body') is-danger @enderror"
                                   placeholder="Enter the blog post's content..."
-                                  value="{{ old('body') }}"></x-ui.wysiwyg>
+                                  value="{{ old('body') }}" maxlength="225"></x-ui.wysiwyg>
                     @error('body')
                     <span class="icon has-text-danger is-small is-right">
                         <i class="fas fa-exclamation-triangle"></i>
@@ -69,10 +98,24 @@
                 <div class="control">
                     <a type="button" href="{{ url()->previous() }}" class="button is-light">Cancel</a>
                 </div>
-                <div class="control">
-                    <button type="reset" class="button is-warning">Reset</button>
-                </div>
+                <button type="reset" id="reset-button" class="button is-warning">Reset</button>
             </div>
+            <script>
+                // Get the reset button element
+                const resetButton = document.getElementById('reset-button');
+
+                // Add event listener for click event
+                resetButton.addEventListener('click', function() {
+                    // Get all input elements in the form
+                    const inputs = document.querySelectorAll('input, textarea');
+
+                    // Reset the value of each input element
+                    inputs.forEach(input => {
+                        input.value = '';
+                    });
+                });
+            </script>
+
         </form>
     </div>
 @endsection

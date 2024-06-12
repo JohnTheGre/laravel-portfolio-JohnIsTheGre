@@ -32,9 +32,9 @@ class PostController extends Controller
     {
         // Validate the request
         $validated = $request->validate([
-            'title' => 'required',
+            'title' => 'required|max:10',
             'slug' => 'required',
-            'body' => 'required',
+            'body' => 'required|min:5|max:225',
         ]);
 
         // Create a new Post model object, mass-assign its attributes with
@@ -42,7 +42,7 @@ class PostController extends Controller
         $post = Post::create($validated);
 
         // Redirect to the blog index page
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index')->with('success', 'Blog created successfully!');
     }
 
     /**
@@ -88,24 +88,17 @@ class PostController extends Controller
     /**
      * Show the form for deleting the specified Post.
      */
-    public function delete(Post $post)
-    {
+    public function delete(Post $post) {
         return view('posts.delete', [
             'post' => $post
         ]);
     }
 
-    /**
-     * Remove the specified Post from storage.
-     */
-    public function destroy(Post $post)
-    {
-        // Delete the post from the database
+    public function destroy(Post $post) {
         $post->delete();
 
-        // Redirect to the blog show page
-        return redirect()->route('posts.index')
-            ->with('success', 'Post successfully deleted');
+        return redirect()->route('posts.index');
+
     }
 
 }

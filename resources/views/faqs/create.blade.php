@@ -31,6 +31,18 @@
             </div>
         @endif
 
+        {{-- Display success or error messages --}}
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+        @if (session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
+
         <form action="{{ route('faqs.store') }}" method="POST">
             @csrf
             <h1 class="title is-4">What is your question?</h1>

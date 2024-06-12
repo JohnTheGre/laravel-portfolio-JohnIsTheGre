@@ -29,13 +29,13 @@ class FaqController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'question' => 'required|max:255',
-            'answer' => 'required',
+            'question' => 'required|min:5|max:255',
+            'answer' => 'required|min:10',
             'link' => 'nullable|url',
         ]);
 
-        // Save the validated data
-        Faq::create($validated);
+        // Attempt to create the FAQ
+        $faq = Faq::create($validated);
 
         return redirect()->route('faqs.index')->with('success', 'FAQ created successfully!');
     }
