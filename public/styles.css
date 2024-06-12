@@ -1,0 +1,255 @@
+/*!* index *!*/
+/*@media screen and (max-width:600px){*/
+/*    aside, .interest, article{*/
+/*        width: 100%;*/
+/*    }*/
+/*}*/
+/**{*/
+/*    box-sizing: border-box;*/
+/*}*/
+.navbar ul{
+    background-color:  black;
+    list-style: none;
+    overflow: hidden;
+}
+.navbar a{
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+}
+.navbar a:hover{
+    background-color: blue;
+}
+.navbar a:active{
+    background-color: purple;
+}
+.navbar li{
+    float: left;
+    color: blue;
+}
+.content{
+    border: 5px solid white;
+    border-radius: 20px;
+}
+#logo{
+    width: 150px;
+    margin-left: 100px;
+    height: 50px;
+}
+body{
+    background-color: #0437F2;
+    font-family: "Lato";
+    font-size: 16px;
+}
+#h-first{
+    color: blue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: left;
+}
+.p0{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+.games{
+    border: solid;
+    border-radius: 20px;
+    background-color: white;
+    float: right;
+}
+.games a:hover{
+    color: red;
+}
+.games a:active{
+    color: brown;
+}
+aside{
+    width: 20%;
+    float: left;
+    border: solid 2px black;
+    border-radius: 20px;
+    background-color: black;
+    padding: 10px
+}
+aside a:hover{
+    color: purple;
+}
+aside a{
+    color: blue;
+    text-decoration: none;
+}
+aside a:active{
+    color: pink
+}
+footer{
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    display: block;
+    clear: both;
+    color : black;
+}
+.fa-brands.fa-whatsapp{
+    color: yellow;
+}
+.fa-brands.fa-twitter{
+    color: black;
+}
+.fa-brands.fa-instagram{
+    color: purple;
+}
+.fa-brands.fa-facebook{
+    color: blue;
+}
+.icons a{
+    text-decoration: none;
+}
+
+
+/* profile */
+.myself h1{
+    text-align: left;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.myself{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.myself h2{
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', "Calibri", 'Trebuchet MS', sans-serif;
+    text-align: left;
+}
+#foot-profile{
+    text-align: center;
+    color: black;
+}
+
+
+/* FAQ and blog */
+.document{
+    text-align: left;
+}
+.document{
+    border: 5px solid white;
+    border-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    padding-right: 30px;
+    margin: 50px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+}
+.document a:link{
+    color: purple;
+}
+.document a:hover{
+    color:black;
+}
+#h-frequent{
+    font-style: italic;
+    list-style-type: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    text-align: center;
+}
+.blog h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    text-align: center;
+    color: black;
+}
+.blog p{
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 35px;
+}
+.strength-paragraph{
+    color: white;
+}
+.weakness-paragraph{
+    color: white;
+}
+.study-choice{
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    text-align: center;
+
+}
+.study{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    text-align: center;
+}
+.body-programming-experience{
+    color: black;
+    text-align: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.paragraph-programming-experience{
+    color: white;
+    text-align: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.ict-field-of-body h1{
+    text-align: left;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.field-of-paragragh{
+    color: white;
+}
+
+
+/* dashboard */
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table{
+    background-color: white;
+}
+table{
+    color: black;
+}
+.bar{
+    color: red
+}
+#NBSA-heading{
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', "Calibri", 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+.NBSA-paragraph{
+    color: white;
+}
+.nbsa-data{
+    padding-top: 120px;
+    text-align: center;
+}
+.nbsa-titles{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+.nbsa-bar, .nbsa-percentage{
+    height: 10px;
+    border-radius: .25rem;
+}
+.nbsa-bar{
+    width: 55%;
+    background-color: white;
+    margin-left: 365px;
+}
+.nbsa-percentage{
+    display: block;
+    background-color: black;
+    width: 50%;
+}
