@@ -1,93 +1,22 @@
-@extends('components.layout.layout')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Dashboard') }}
+        </h2>
+    </x-slot>
 
-@section('content')
-    <body>
-    <main>
-        <table border="1px solid black">
-            <tr>
-                <th style="width:10%">Quartile</th>
-                <th style="width:30%">Course</th>
-                <th style="width:70%">Exam</th>
-                <th style="width:30%">Grade</th>
-                <th style="width:30%">EC</th>
-            </tr>
-            <tr>
-                <td rowspan="3">1</td>
-                <td>Program & Career Orientation</td>
-                <td>Assessment website</td>
-                <td>x</td>
-                <td>2,5</td>
-            </tr>
-            <tr>
-                <td>Computer Science Basics</td>
-                <td>Written knowledge test</td>
-                <td>x</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>Programming Basics</td>
-                <td>Case study exam</td>
-                <td>x</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Object-Oriented Programming</td>
-                <td>Presentation / Case study exam</td>
-                <td>x / x</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td rowspan="2">3</td>
-                <td>Framework Development 1</td>
-                <td>Case Study Exam</td>
-                <td>x</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>Framework Project 1</td>
-                <td>Criterium bases interview / assignement / Case study exam</td>
-                <td>x/x/x</td>
-                <td>7,5</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Framework Project 2</td>
-                <td>Assessment website</td>
-                <td>x</td>
-                <td>10</td>
-            </tr>
-            <tr>
-                <td rowspan="3">All</td>
-                <td>Personal Professional Development</td>
-                <td>Final delivery / Report of acceptence test and optional assessments / IT Development portfolio</td>
-                <td>x/x/x</td>
-                <td>12,5</td>
-            </tr>
-            <tr>
-                <td>IT Personality 1</td>
-                <td rowspan="2">Portfolio</td>
-                <td>x</td>
-                <td>1,25</td>
-            </tr>
-            <tr>
-                <td>IT Personality 2</td>
-                <td>x</td>
-                <td>1,25</td>
-            </tr>
-        </table>
-    </main>
-    </body>
-    <div class="nbsa-data">
-        <h1 id="NBSA-heading"> NBSA boundary</h1>
-        <p class="NBSA-paragraph">In order to pass each year 60EC's are needed. When you get below 45EC's you cannot
-            continue the course</p>
-        <div class="nbsa-titles">
-            <h3 class="nbsa-name">To pass</h3>
-            <span class="nbsa-number">60 ECT needed</span>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900 dark:text-gray-100">
+                    {{ __("You're logged in!") }}
+                </div>
+            </div>
         </div>
-        <div class="nbsa-bar">
-            <span class="nbsa-percentage"></span>
+        <div class="mt-6 flex justify-center">
+            <a href="{{ route('index') }}" class="inline-flex items-center px-4 py-2 bg-blue-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 active:bg-blue-900 focus:outline-none focus:border-blue-900 focus:shadow-outline-blue disabled:opacity-25 transition ease-in-out duration-150">
+                Back to Home Page
+            </a>
         </div>
     </div>
-@endsection
+</x-app-layout>

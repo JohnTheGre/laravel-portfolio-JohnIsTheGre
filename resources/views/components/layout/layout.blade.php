@@ -30,10 +30,6 @@
                    class="navbar-item {{ Request::route()?->getName() === 'index' ? "is-active" : "" }}">
                     Index
                 </a>
-                <a href="{{ route('profile') }}"
-                   class="navbar-item {{ Request::route()?->getName() === 'profile' ? "is-active" : "" }}">
-                    Profile
-                </a>
                 <a href="{{ route('faqs.index') }}"
                    class="navbar-item {{ Request::route()?->getName() === 'faqs.index' ? "is-active" : "" }}">
                     FAQ

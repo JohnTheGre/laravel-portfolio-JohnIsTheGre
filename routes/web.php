@@ -2,9 +2,9 @@
 
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StuffController;
 use Illuminate\Support\Facades\Route;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -19,8 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [StuffController::class, 'index'])->name('index');
 Route::get('profile', [StuffController::class, 'profile'])->name('profile');
-Route::get('dashboard', [StuffController::class, 'dashboard'])->name('dashboard');
-
 Route::get('/my-study', function () {
     return view('my-study');
 })->name('my-study');
@@ -46,6 +44,7 @@ Route::put('faqs/{faq}', [FaqController::class, 'update'])->name('faqs.update');
 Route::get('faq/{faq}/delete', [FaqController::class, 'delete'])->name('faq.delete');
 Route::delete('faq/{faq}', [FaqController::class, 'destroy'])->name('faqs.destroy');
 
+//Route::resource('posts', PostController::class);
 Route::get('posts', [PostController::class, 'index'])->name('posts.index');
 Route::get('posts/create', [PostController::class, 'create'])->name('posts.create');
 Route::post('posts', [PostController::class, 'store'])->name('posts.store');
@@ -54,3 +53,20 @@ Route::get('post/{post}/edit', [PostController::class, 'edit'])->name('post.edit
 Route::put('posts/{post}', [PostController::class, 'update'])->name('posts.update');
 Route::get('post/{post}/delete', [PostController::class, 'delete'])->name('post.delete');
 Route::delete('post/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+
+Route::get('/error', function () {
+    abort(500);
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [StuffController::class, 'dashboard'])->name('dashboard');
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
