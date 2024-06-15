@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    protected int $maxAttempts = 5;
+    protected int $decayMinutes = 1;
+
     public function login(Request $request)
     {
         $credentials = $request->validate([
@@ -25,5 +28,9 @@ class LoginController extends Controller
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ]);
+    }
+    public function __construct()
+    {
+        $this->middleware('throttle:login', ['only' => ['login']]);
     }
 }

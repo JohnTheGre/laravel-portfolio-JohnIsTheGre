@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StuffController;
+use App\Mail\ExampleEmail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -69,4 +72,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});
+Route::get('/send-test-email', function () {
+    try {
+        Mail::to('aydotjohn@gmail.com')->send(new ExampleEmail());
+        return 'Test email sent!';
+    } catch (\Exception $e) {
+        return 'Error: '.$e->getMessage();
+    }
+});
 require __DIR__.'/auth.php';

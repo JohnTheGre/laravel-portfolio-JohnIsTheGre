@@ -2,6 +2,13 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
+    <!-- Flash Message for Redirection -->
+    @if (session('message'))
+        <div class="mb-4 text-center text-lg text-gray-700 dark:text-gray-300">
+            {{ session('message') }}
+        </div>
+    @endif
+
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
@@ -17,11 +24,14 @@
             <x-input-label for="password" :value="__('Password')" />
 
             <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+                          type="password"
+                          name="password"
+                          required autocomplete="current-password" />
 
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
+
+            <!-- Additional Note for Password -->
+            <p class="text-xs text-gray-500 mt-1">Use a strong password and consider using a password manager for better security.</p>
         </div>
 
         <!-- Remember Me -->
@@ -44,4 +54,9 @@
             </x-primary-button>
         </div>
     </form>
+    <div class="mt-6 flex justify-center">
+        <a href="{{ route('index') }}" class="inline-flex items-center px-4 py-2 bg-blue-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 active:bg-blue-900 focus:outline-none focus:border-blue-900 focus:shadow-outline-blue disabled:opacity-25 transition ease-in-out duration-150">
+            Back to Home Page
+        </a>
+    </div>
 </x-guest-layout>
